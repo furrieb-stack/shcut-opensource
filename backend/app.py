@@ -140,6 +140,7 @@ def get_db():
         host=os.getenv('DB_HOST', 'localhost'),
         user=os.getenv('DB_USER', 'root'),
         password=os.getenv('DB_PASSWORD', ''),
+        port=int(os.getenv('DB_PORT', 20269)),
         database=os.getenv('DB_NAME', 'shcut')
     )
 
@@ -626,4 +627,4 @@ def redirect_to_url(short_code):
     return redirect(url['original_url'])
 
 if __name__ == '__main__':
-    app.run(debug=False, port=5000)
+    app.run(debug=True, port=5000)
