@@ -1,0 +1,86 @@
+# .gitignore
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv.*
+*.egg
+*.egg-info/
+dist/
+build/
+*.db
+*.sqlite3
+
+# Environment
+# .env
+.env.local
+.env.*.local
+.flaskenv
+.python-version
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.iml
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Uploads
+uploads/
+media/
+static/uploads/
+
+# Database
+mysql-data/
+*.sql
+*.dump
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.coverage.*
+*.cover
+*.py,cover
+.pytest_cache/
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# Docker
+.docker/
+docker-compose.override.yml
+*.pid
+*.seed
+*.pid.lock
+
+# Secrets
+*.pem
+*.key
+*.crt
+.secrets/
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+*.pid
+*.lock
+*.bak

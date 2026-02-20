@@ -1,0 +1,35 @@
+{
+    "embeds": [
+        {
+            "title": "🔗 New URL Created",
+            "color": 3447003,
+            "fields": [
+                {
+                    "name": "User",
+                    "value": "username",
+                    "inline": true
+                },
+                {
+                    "name": "Short Code",
+                    "value": "code",
+                    "inline": true
+                },
+                {
+                    "name": "Original URL",
+                    "value": "url",
+                    "inline": false
+                },
+                {
+                    "name": "Short URL",
+                    "value": "short",
+                    "inline": false
+                },
+                {
+                    "name": "Timestamp",
+                    "value": "time",
+                    "inline": true
+                }
+            ]
+        }
+    ]
+}

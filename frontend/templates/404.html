@@ -1,0 +1,38 @@
+<!-- frontend/templates/404.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shcut - 404 Not Found</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <span class="logo-text">shcut</span>
+                    <span class="logo-dot">.</span>
+                </div>
+                <div class="nav-actions">
+                    <button class="btn btn-primary" onclick="window.location.href='/'">Go Home</button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="error-container">
+                <div class="error-code">404</div>
+                <h1 class="error-title">Page Not Found</h1>
+                <p class="error-message">The page you're looking for doesn't exist or has been moved.</p>
+                <div class="error-actions">
+                    <button class="btn btn-primary" onclick="window.location.href='/'">Back to Dashboard</button>
+                    <button class="btn btn-outline" onclick="window.history.back()">Go Back</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shcut - URL Shortener</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <span class="logo-text">shcut</span>
+                    <span class="logo-dot">.</span>
+                </div>
+                <div class="nav-actions" id="navActions">
+                    <button class="btn btn-outline" id="loginBtn" onclick="showAuthModal('login')">Log in</button>
+                    <button class="btn btn-primary" id="signupBtn" onclick="showAuthModal('signup')">Sign up</button>
+                </div>
+                <div class="user-menu hidden" id="userMenu">
+                    <span class="username" id="username"></span>
+                    <button class="btn btn-outline" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">Shorten your URLs<span class="accent">.</span></h1>
+                <p class="hero-subtitle">Create clean, memorable links in seconds. Maximum 5 links per user.</p>
+            </div>
+
+            <div class="dashboard hidden" id="dashboard">
+                <div class="url-form-container">
+                    <form id="urlForm" onsubmit="shortenUrl(event)">
+                        <div class="input-group">
+                            <input type="url" id="urlInput" placeholder="Enter your long URL here..." required>
+                            <button type="submit" class="btn btn-primary btn-large">Shorten</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="urls-section">
+                    <h2>Your links <span class="count" id="urlCount">0/5</span></h2>
+                    <div class="urls-grid" id="urlsGrid">
+                        <div class="empty-state">
+                            <p>No links yet. Create your first shortened URL above.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="modal hidden" id="authModal">
+            <div class="modal-overlay" onclick="closeAuthModal()"></div>
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeAuthModal()">×</button>
+                <div class="auth-tabs">
+                    <button class="tab-btn active" id="loginTab" onclick="switchAuthTab('login')">Log in</button>
+                    <button class="tab-btn" id="signupTab" onclick="switchAuthTab('signup')">Sign up</button>
+                </div>
+                
+                <form id="loginForm" class="auth-form" onsubmit="handleAuth(event, 'login')">
+                    <div class="form-group">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" id="loginUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Log in</button>
+                </form>
+
+                <form id="signupForm" class="auth-form hidden" onsubmit="handleAuth(event, 'signup')">
+                    <div class="form-group">
+                        <label for="signupUsername">Username</label>
+                        <input type="text" id="signupUsername" required pattern="[a-zA-Z0-9_]{3,20}">
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Sign up</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="toast-container" id="toastContainer"></div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
