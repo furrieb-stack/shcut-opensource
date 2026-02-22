@@ -27,7 +27,7 @@ app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 app.config['SESSION_COOKIE_SECURE'] = False
 CORS(app, supports_credentials=True, origins=["http://localhost:5000", "http://127.0.0.1:5000"])
 
-WEBHOOK_URL = "https://discord.com/api/webhooks/1474500737844379658/peUQqcBQVUqzoIo4do9I7EOJxNOapZJH3FHUZDo5LYePnpShmm1g5YpThd51mcICQc3a"
+WEBHOOK_URL = "paste your here"
 
 db_config = {
     'host': os.getenv('DB_HOST'),
